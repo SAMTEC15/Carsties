@@ -79,7 +79,7 @@ namespace AuctionService.Controllers
             return BadRequest("Could not save changes to the DB");
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public async Task<ActionResult> DeleteAuction(Guid id)
         {
             var auction = await _context.Auctions.FindAsync(id);
